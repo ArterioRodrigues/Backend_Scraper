@@ -8,7 +8,7 @@ var app = express()
 
 var options = {
     url:  'http://url',
-    timeout: 60000
+    timeout: 300000
 }
 
 async function checkLinks(data){  
@@ -45,7 +45,7 @@ function getPage(search){
         
             if(!(error || response.statusCode > 400)){
                 data = response.body
-        
+                console.log(data)
 
                 tag = ['<a', '>', 'href="', '"'];
                 str = '';
